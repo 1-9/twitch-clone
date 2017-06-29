@@ -1,3 +1,24 @@
-<h1>
-  {{title}}
-</h1>
+<div ngClass="{'wrapper', 'user-not-autorized': user.logined}">
+
+    <header class="site-header">
+        <div class="left">
+            <a href="/" class="logo"></a>
+            <app-navigation></app-navigation>
+            <app-search></app-search>
+        </div>
+        <div class="right">
+            <app-prime-feed></app-prime-feed>
+            <div class="login-wrap" *ngIf="user.loggined; else login-block">
+                <app-user-notifications></app-user-notifications>
+                <app-user-header-component></app-user-header-component>
+            </div>
+            <ng-tempate>
+                <button>Войти</button>
+                <button>Подписаться</button>
+            </ng-tempate>
+        </div>
+
+    </header>
+
+</div><!-- /.wrapper -->
+
